@@ -1,0 +1,8 @@
+*.a
+*.o
+maritcp
+test\*.o
+test\*.a
+mario\*.o
+mario\*.a
+test\mario_test

@@ -1,16 +1,16 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_table.h
  *	
- *  Ãû³Æ£ºµ¥Ò»Éú²úÕß¡¢Ïû·ÑÕßµÄ±í(Ã¿Ò»ĞĞ¶¼ÊÇÒ»¸ö¶ÓÁĞ£©
- *  ¹¦ÄÜ£ºÎªµ¥Ò»°²È«·ÃÎÊÌá¹©Êı¾İ½á¹¹
+ *  åç§°ï¼šå•ä¸€ç”Ÿäº§è€…ã€æ¶ˆè´¹è€…çš„è¡¨(æ¯ä¸€è¡Œéƒ½æ˜¯ä¸€ä¸ªé˜Ÿåˆ—ï¼‰
+ *  åŠŸèƒ½ï¼šä¸ºå•ä¸€å®‰å…¨è®¿é—®æä¾›æ•°æ®ç»“æ„
  *  
- *  Created on: 2010-6-30
- *      Author: feng jianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #ifndef MARIO_TABLE_H_

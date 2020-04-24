@@ -1,11 +1,11 @@
 /*
  * function.c
  *	
- *  Date: 2013-3-1
- *  Author: feng jianhua
- *  Mail: 56683216@qq.com
+ *  Date: 
+ *  Author: 
+ *  Mail: 
  *
- *  ÐÞ¸Ä¼ÇÂ¼£º
+ *  
  */
 #include "function.h"
 #include "protocol.h"

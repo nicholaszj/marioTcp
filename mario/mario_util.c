@@ -1,13 +1,13 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_util.c
  *	
- *  Created on: 2010-7-1
- *      Author: feng jianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 #define _GNU_SOURCE
 #include "mario_util.h"
@@ -37,7 +37,7 @@ void signal_handler(int sig, sighandler_t handler) {
 	sigaction(sig, &action, NULL);
 }
 
-//×Ó½ø³ÌµÄ´´½¨ÓÃ×÷daemon,ÓÃÀ´½ÓÊÕÏàÓ¦µÄTCPµÄº¯Êı
+//å­è¿›ç¨‹çš„åˆ›å»ºç”¨ä½œdaemon,ç”¨æ¥æ¥æ”¶ç›¸åº”çš„TCPçš„å‡½æ•°
 void run_daemon() {
 	pid_t pid;
 	if ((pid = fork()) < 0) 
@@ -47,17 +47,17 @@ void run_daemon() {
 	} 
 	else if (pid == 0) 
 	{
-		printf("ÕâÊÇ×Ó½ø³Ì£¡");
+		printf("è¿™æ˜¯å­è¿›ç¨‹ï¼");
 	}
 	else
 	{
-		printf("ÕâÊÇ¸¸½ø³Ì£¡");
+		printf("è¿™æ˜¯çˆ¶è¿›ç¨‹ï¼");
         exit(0);
 	}
-	setsid(); //ÎªÁË×Ó½øĞĞ´´½¨Ò»¸öĞÂµÄ»á»°
+	setsid(); //ä¸ºäº†å­è¿›è¡Œåˆ›å»ºä¸€ä¸ªæ–°çš„ä¼šè¯
 
-	signal_handler(SIGHUP, SIG_IGN); //ºöÂÔSIGHUP
-	signal_handler(SIGTERM, SIG_IGN);//ºöÂÔSIGTERM
-	signal_handler(SIGPIPE, SIG_IGN);//ºöÂÔSIGPIPE
+	signal_handler(SIGHUP, SIG_IGN); //å¿½ç•¥SIGHUP
+	signal_handler(SIGTERM, SIG_IGN);//å¿½ç•¥SIGTERM
+	signal_handler(SIGPIPE, SIG_IGN);//å¿½ç•¥SIGPIPE
 }
 

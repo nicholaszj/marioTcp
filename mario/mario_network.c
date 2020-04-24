@@ -1,24 +1,22 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_network.c
  *	
- *  Created on: 2010-6-30
- *      Author: fengjianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
- *  £¨1£©2010-7-17: ÓÅ»¯ºËĞÄ£¬¼ò»¯Í¨ÖªÁ÷³Ì£º
- *  		½«worker¶à´ÎÖØ¸´Ñ¡Ôñfree conn¸ÄÎªserverÖ±½ÓÑ¡Ôñfree worker£»
- *  		serverÍ¨ÖªÖ±½ÓĞ´Ò»¸ö¿Õ×Ö½Ú£¬Ìá¸ßÍ¨ÖªĞ§ÂÊ
- *  £¨2£©2010-7-20£ºconn_readÓÅ»¯
- *  		Ö§³Ö´íÎó°ü¡¢¸´ÔÓÍøÂç»·¾³
- *  £¨3£©2013-3-1£º
- *  		°ÑÓÃ»§³éÏó³öÀ´£»stxÉèÎªJOHAN_P2P_STX
- *  		½«start_serverµ÷ÕûÎªÏß³Ìrunº¯Êı
- *  		³ıÈÕÖ¾Ä£¿é²»È·¶¨£¬ÆäËû²¿·ÖÖ§³Ö¶àSERVER£¬Î´²âÊÔ
- *   (4)2013-3-4:
- *   		JOHAN_P2P_STX¸ÄÎªDEFAULT_STX£»stxÓÃ»§¿É×Ô¶¨Òå
+ *  ä¿®æ”¹è®°å½•ï¼š
+ *  ï¼ˆ1ï¼‰ä¼˜åŒ–æ ¸å¿ƒï¼Œç®€åŒ–é€šçŸ¥æµç¨‹ï¼š
+ *  	å°†workerå¤šæ¬¡é‡å¤é€‰æ‹©free connæ”¹ä¸ºserverç›´æ¥é€‰æ‹©free workerï¼›
+ *  	serveré€šçŸ¥ç›´æ¥å†™ä¸€ä¸ªç©ºå­—èŠ‚ï¼Œæé«˜é€šçŸ¥æ•ˆç‡
+ *  ï¼ˆ2ï¼‰conn_readä¼˜åŒ–
+ *  	æ”¯æŒé”™è¯¯åŒ…ã€å¤æ‚ç½‘ç»œç¯å¢ƒ
+ *  ï¼ˆ3ï¼‰æŠŠç”¨æˆ·æŠ½è±¡å‡ºæ¥ï¼›stxè®¾ä¸ºJOHAN_P2P_STX
+ *  	å°†start_serverè°ƒæ•´ä¸ºçº¿ç¨‹runå‡½æ•°
+ *  	é™¤æ—¥å¿—æ¨¡å—ä¸ç¡®å®šï¼Œå…¶ä»–éƒ¨åˆ†æ”¯æŒå¤šSERVERï¼Œæœªæµ‹è¯•
+ *   (4) JOHAN_P2P_STXæ”¹ä¸ºDEFAULT_STXï¼›stxç”¨æˆ·å¯è‡ªå®šä¹‰
  *
  */
 
@@ -187,7 +185,7 @@ void close_err_conn(CONN *c)
 	close_conn(c, g_akg_closed_id);
 }
 
-//¶ÁÈ¡µ±Ç°µÄÊı¾İµ½²¿·Ö»º³åÇø
+//è¯»å–å½“å‰çš„æ•°æ®åˆ°éƒ¨åˆ†ç¼“å†²åŒº
 static void conn_read(struct bufferevent *be,CONN *arg, int* fsize)
 {
 	CONN *c = arg;
@@ -234,13 +232,13 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 				c->in_buf_len += len;
 			}
 			*/
-			conn_read(be,c,&fsize); //¸ù¾İ´óĞ¡¶ÁÈ¡µ½EVENTµÄ»º³åÇø
+			conn_read(be,c,&fsize); //æ ¹æ®å¤§å°è¯»å–åˆ°EVENTçš„ç¼“å†²åŒº
 			
 			while (1) 
 			{
 				if (c->in_buf_len < SIZE_OF_HEAD) 
 				{
-				//Ò»¸öĞ­Òé°üµÄÇëÇóÍ·»¹Ã»¶ÁÍê£¬Ôò¼ÌĞøÑ­»·¶Á»òÕßµÈ´ıÏÂÒ»¸ölibeventÊ±¼ä½øĞĞÑ­»·¶Á
+				//ä¸€ä¸ªåè®®åŒ…çš„è¯·æ±‚å¤´è¿˜æ²¡è¯»å®Œï¼Œåˆ™ç»§ç»­å¾ªç¯è¯»æˆ–è€…ç­‰å¾…ä¸‹ä¸€ä¸ªlibeventæ—¶é—´è¿›è¡Œå¾ªç¯è¯»
 					if (0 == fsize)
 					{
 						break;
@@ -250,12 +248,12 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 						return;
 					}
 				}
-				//»ñÈ¡Í·ÎÄ¼şµÄÊı¾İ
+				//è·å–å¤´æ–‡ä»¶çš„æ•°æ®
 				HEAD *h = (HEAD*) c->in_buf;
 				
 				if (h->pkglen > MAX_PKG_LEN || h->pkglen < SIZE_OF_HEAD || h->stx != g_stx) 
 				{
-				//ÇëÇó°ü²»ºÏ·¨
+				//è¯·æ±‚åŒ…ä¸åˆæ³•
 					slog_err_t(c->owner->qlog, "pkg error, length: %u pkglen: %u stx: 0x%x", c->in_buf_len, h->pkglen, h->stx);
 					close_err_conn(c);
 					return;
@@ -269,7 +267,7 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 						return;
 				}
 
-				//Ö´ĞĞĞ­ÒéÖ¸Áî
+				//æ‰§è¡Œåè®®æŒ‡ä»¤
 				if (h->akg_id < g_akg_connected_id && AKG_FUNC[h->akg_id]) 
 				{
 
@@ -285,7 +283,7 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 					return;
 				}
 
-				//´¦ÀíÏÂÒ»¸öĞ­Òé°ü£¬»òÕß¼ÌĞø¶Á
+				//å¤„ç†ä¸‹ä¸€ä¸ªåè®®åŒ…ï¼Œæˆ–è€…ç»§ç»­è¯»
 				c->in_buf_len -= h->pkglen;
 				if (c->in_buf_len == 0) 
 				{
@@ -294,7 +292,7 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 					else
 						return;
 				}
-				//Ã»´æÒÆ¶¯µ½ÏàÓ¦µÄÎ»ÖÃ
+				//æ²¡å­˜ç§»åŠ¨åˆ°ç›¸åº”çš„ä½ç½®
 				memmove(c->in_buf, c->in_buf + h->pkglen, c->in_buf_len);
 			}
 
@@ -302,7 +300,7 @@ static void on_conn_read(struct bufferevent *be, void *arg)
 }
 
 
-//µ±Ç°´íÎó·¢ÉúÊ±µÄ²ÎÊı¶ÔÓ¦
+//å½“å‰é”™è¯¯å‘ç”Ÿæ—¶çš„å‚æ•°å¯¹åº”
 static void on_conn_err(struct bufferevent *be, short event, void *arg) 
 {
 	CONN *c = (CONN*) arg;
@@ -322,7 +320,7 @@ static void on_conn_err(struct bufferevent *be, short event, void *arg)
 	close_conn(c, id);
 }
 
-//¹¤×÷Ïß³ÌµÄ¿ªÆô
+//å·¥ä½œçº¿ç¨‹çš„å¼€å¯
 static void *start_worker(void *arg) 
 {
 	WORKER *w = (WORKER*) arg;
@@ -342,20 +340,20 @@ static void *start_worker(void *arg)
 }
 
 /*************************************************************
-**¹¦ÄÜ: µ±Ç°serverµÄ³õÊ¼»¯
-**º¯Êı: SERVER *init_server(int port, uint16 workernum, uint32 connum, int read_timeout, int write_time)
-**²ÎÊı£ºport----------°ó¶¨µÄport
-**      workernum-----¹¤×÷Ïß³ÌµÄÊıÁ¿
-**      connum--------½ÓÈëµÄÊıÁ¿
-**      read_timeout--¶ÁÖµµÃ³¬Ê±Ê±¼ä
-**      write_timeout-Ğ´ÈëµÄ³¬Ê±Ê±¼ä
-**ËµÃ÷£ºserverµÄ³õÊ¼»¯º¯Êı
+**åŠŸèƒ½: å½“å‰serverçš„åˆå§‹åŒ–
+**å‡½æ•°: SERVER *init_server(int port, uint16 workernum, uint32 connum, int read_timeout, int write_time)
+**å‚æ•°ï¼šport----------ç»‘å®šçš„port
+**      workernum-----å·¥ä½œçº¿ç¨‹çš„æ•°é‡
+**      connum--------æ¥å…¥çš„æ•°é‡
+**      read_timeout--è¯»å€¼å¾—è¶…æ—¶æ—¶é—´
+**      write_timeout-å†™å…¥çš„è¶…æ—¶æ—¶é—´
+**è¯´æ˜ï¼šserverçš„åˆå§‹åŒ–å‡½æ•°
 *************************************************************/
 SERVER* init_server(int port, uint16 workernum, uint32 connnum, int read_timeout, int write_timeout)
 {
 	g_stx = 0;
 
-	//³õÊ¼»¯LOGµÄ¶ÓÁĞ
+	//åˆå§‹åŒ–LOGçš„é˜Ÿåˆ—
 	LOG_QUEUE *lq = create_log_queue();
 	
 	if (lq == NULL)
@@ -363,7 +361,7 @@ SERVER* init_server(int port, uint16 workernum, uint32 connnum, int read_timeout
 		return NULL;
 	}
 
-	//³õÊ¼»¯serverµÄÄÚ´æºÍ´óĞ¡
+	//åˆå§‹åŒ–serverçš„å†…å­˜å’Œå¤§å°
 	SERVER *s = (SERVER*) malloc(sizeof(SERVER));
 	if (s == NULL)
 	{
@@ -382,7 +380,7 @@ SERVER* init_server(int port, uint16 workernum, uint32 connnum, int read_timeout
 		return NULL;
 	}
 
-	//³õÊ¼»¯µ±Ç°µÄ¹¤×÷Ïß³Ì¶ÔÓ¦¹ØÏµ
+	//åˆå§‹åŒ–å½“å‰çš„å·¥ä½œçº¿ç¨‹å¯¹åº”å…³ç³»
 	s->workers = init_workers(s, workernum, connnum, read_timeout, write_timeout);
 	if (s->workers == NULL)
 	{
@@ -395,17 +393,17 @@ SERVER* init_server(int port, uint16 workernum, uint32 connnum, int read_timeout
 	return s;
 }
 /*****************************************************************************
-**¹¦ÄÜ:
-**º¯Êı: 
-**²ÎÊı£º
+**åŠŸèƒ½:
+**å‡½æ•°: 
+**å‚æ•°ï¼š
 **
 **
-**ËµÃ÷£º
+**è¯´æ˜ï¼š
 *****************************************************************************/
 WORKER_ARRAY* init_workers(SERVER *server, uint16 workernum, uint32 connnum, 
 							int read_timeout,int write_timeout) 
 {
-    //³õÊ¼»¯workersÏß³ÌµÄÈİÆ÷Êı×é£¬²¢¶ÔÕâ¸öÈİÆ÷Êı×é½øĞĞ³õÊ¼»¯
+    //åˆå§‹åŒ–workersçº¿ç¨‹çš„å®¹å™¨æ•°ç»„ï¼Œå¹¶å¯¹è¿™ä¸ªå®¹å™¨æ•°ç»„è¿›è¡Œåˆå§‹åŒ–
 	WORKER_ARRAY *workers = NULL;
 	
 	uint32 len = sizeof(WORKER_ARRAY) + sizeof(WORKER) * workernum;
@@ -417,10 +415,10 @@ WORKER_ARRAY* init_workers(SERVER *server, uint16 workernum, uint32 connnum,
 	}
 	memset(workers, 0, len);
 	
-	workers->size = workernum; //Éè¶¨µ±Ç°¹¤×÷Ïß³ÌµÄ¶àÉÙ
-	workers->server = server; //µ±Ç°workers¹¤×÷ÕßµÄ°ó¶¨µÄserverÉè¶¨
+	workers->size = workernum; //è®¾å®šå½“å‰å·¥ä½œçº¿ç¨‹çš„å¤šå°‘
+	workers->server = server; //å½“å‰workerså·¥ä½œè€…çš„ç»‘å®šçš„serverè®¾å®š
 
-	//ÎªÁËÃ¿¸öµ¥¶ÀµÄworkerÉêÇëÏàÓ¦µÄ¿Õ¼äºÍÄÚ²¿ÊÂ¼ş°ó¶¨
+	//ä¸ºäº†æ¯ä¸ªå•ç‹¬çš„workerç”³è¯·ç›¸åº”çš„ç©ºé—´å’Œå†…éƒ¨äº‹ä»¶ç»‘å®š
 	for (int i = 0; i < workernum; i++)
 	{
 		int fds[2];
@@ -442,31 +440,31 @@ WORKER_ARRAY* init_workers(SERVER *server, uint16 workernum, uint32 connnum,
 		w->qlog = lq;
 		w->ind = i;
 
-		//ÉèÖÃÁ½¸öÊÂ¼şÓÃÀ´°ó¶¨µ½ReadºÍWriteÊı×éÉÏ
+		//è®¾ç½®ä¸¤ä¸ªäº‹ä»¶ç”¨æ¥ç»‘å®šåˆ°Readå’ŒWriteæ•°ç»„ä¸Š
 		w->notified_rfd = fds[0];
 		w->notifed_wfd = fds[1];
-        //³õÊ¼»¯Libevent¿â£¬²¢±£´æ·µ»ØµÄÖ¸Õë
+        //åˆå§‹åŒ–Libeventåº“ï¼Œå¹¶ä¿å­˜è¿”å›çš„æŒ‡é’ˆ
 		w->base = event_init();
 		if (w->base == NULL) 
 		{
 			fprintf(stderr, "init_workers event base error, errno: %d %m\n", errno);
 			return NULL;
 		}
-        //ÉèÖÃeventµÄÊôĞÔºÍ»Øµ÷º¯Êı
+        //è®¾ç½®eventçš„å±æ€§å’Œå›è°ƒå‡½æ•°
 		event_set(&w->notify_event, w->notified_rfd, EV_READ | EV_PERSIST,
 					receive_notify_action, w);
 
-		//ÉèÖÃevent´ÓÊôµÄevent_base£¬°Ñnotify_event  ×¢²áµ½µ±Ç°µÄbaseÖĞÈ¥
+		//è®¾ç½®eventä»å±çš„event_baseï¼ŒæŠŠnotify_event  æ³¨å†Œåˆ°å½“å‰çš„baseä¸­å»
 		event_base_set(w->base, &w->notify_event);
 
-		//°ÑÊÂ¼şÌí¼Óµ½ÊÂ¼ş¶ÓÁĞÖĞÈ¥
+		//æŠŠäº‹ä»¶æ·»åŠ åˆ°äº‹ä»¶é˜Ÿåˆ—ä¸­å»
 		if (event_add(&w->notify_event, 0) == -1) 
 		{
 			fprintf(stderr, "init_workers add event error, errno: %d %m\n", errno);
 			return NULL;
 		}
 
-		//¶ÔÓÚµ±Ç°µÄconnÊ±¼ä
+		//å¯¹äºå½“å‰çš„connæ—¶é—´
 		CONN_LIST *lst = init_conn_list(connnum);
 		if (lst == NULL) 
 		{
@@ -479,11 +477,11 @@ WORKER_ARRAY* init_workers(SERVER *server, uint16 workernum, uint32 connnum,
 		CONN *p = lst->head;
 		while (p != NULL) 
 		{
-			//´´½¨µ±Ç°µÄÊÂ¼ş
+			//åˆ›å»ºå½“å‰çš„äº‹ä»¶
 			p->bufev = bufferevent_new(-1, on_conn_read, NULL, on_conn_err, p);
-			//°ÑÊ±¼ä¼ÓÈëµ½µ±Ç°µÄÊÂ¼ş¶ÓÁĞÖĞÈ¥
+			//æŠŠæ—¶é—´åŠ å…¥åˆ°å½“å‰çš„äº‹ä»¶é˜Ÿåˆ—ä¸­å»
 			bufferevent_base_set(w->base, p->bufev);
-			//¶Ôµ±Ç°µÄÊÂ¼ş¶ÓÁĞµÄ³¬Ê±µÄÉèÖÃ
+			//å¯¹å½“å‰çš„äº‹ä»¶é˜Ÿåˆ—çš„è¶…æ—¶çš„è®¾ç½®
 			bufferevent_settimeout(p->bufev, read_timeout, write_timeout);
 			p->owner = w;
 			p = p->next;

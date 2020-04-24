@@ -1,5 +1,5 @@
 ## MarioTCP ##
-### 以上为 Linux 版本 ###
+### 以上为 Linux 版本( windows版本 在分支 windows_master分支) ###
 **MarioTCP** 是使用libevent模型来建立的一个性能强大的TCP服务器.
 
 ### 1:Getting Started ###

@@ -1,13 +1,13 @@
 /*
  * protocol.h
  *	
- *  Ãû³Æ£ºÍøÂçĞ­Òé
+ *  åç§°ï¼š
  *  
- *  Date: 2013-3-1
- *  Author: feng jianhua (johan fong)
- *  Mail: 56683216@qq.com
+ *  Date: 
+ *  Author: 
+ *  Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #ifndef PROTOCOL_H_
@@ -25,7 +25,7 @@ typedef enum _CODE_RSP {
 } CODE_RSP;
 
 #pragma pack(1)
-/*ÓÃ»§µÇÂ¼Ğ­Òé*/
+/*ç”¨æˆ·ç™»å½•åè®®*/
 typedef struct _LOGIN_REQ {
 	uint16_t uid;
 } LOGIN_REQ;

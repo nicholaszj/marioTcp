@@ -1,16 +1,16 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_network.h
  *	
- *  Ãû³Æ£ºÍøÂç´¦ÀíÄ£¿é£¨¹«¹²Ä£¿é£©
- *	¹¦ÄÜ£º¹ÜÀíÁ¬½Ó£¬ÍøÂç¶ÁĞ´£¬ÈÎÎñ·Ö·¢
+ *  åç§°ï¼šç½‘ç»œå¤„ç†æ¨¡å—ï¼ˆå…¬å…±æ¨¡å—ï¼‰
+ *	åŠŸèƒ½ï¼šç®¡ç†è¿æ¥ï¼Œç½‘ç»œè¯»å†™ï¼Œä»»åŠ¡åˆ†å‘
  *  
- *  Created on: 2010-6-30
- *      Author: fengjianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #ifndef MARIO_NETWORK_H_
@@ -64,7 +64,7 @@ struct _SERVER {
 	int ret;
 	uint16 start_worker_num;
 	uint64 conn_count;
-	pthread_mutex_t start_lock;//start_worker_numÍ¬²½;cond wait¶ÓÁĞÍ¬²½
+	pthread_mutex_t start_lock;//start_worker_numåŒæ­¥;cond waité˜Ÿåˆ—åŒæ­¥
 	pthread_cond_t start_cond;
 };
 

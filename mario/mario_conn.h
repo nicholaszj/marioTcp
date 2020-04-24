@@ -1,12 +1,12 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßÐÔÄÜµÄTCP·þÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_conn.h
  *	
- *  Ãû³Æ£ºÍøÂçÁ¬½Ó¹ÜÀí
- *  ¹¦ÄÜ£º¹ÜÀíÍøÂçÁ¬½ÓµÄÊý¾Ý½á¹¹ºÍËã·¨£¬¹©networkµÈÄ£¿é½»»¥ÐÅÏ¢Ê¹ÓÃ
- *  ÐÞ¸Ä¼ÇÂ¼£º
- *  £¨1£©2010-7-14 connÔö¼ÓÁ¬½ÓÏà¹ØÐÅÏ¢ºÍÓÃ»§Ïà¹ØÐÅÏ¢£¬ºóÕß´ý²ðÀë
+ *  åç§°ï¼šç½‘ç»œè¿žæŽ¥ç®¡ç†
+ *  åŠŸèƒ½ï¼šç®¡ç†ç½‘ç»œè¿žæŽ¥çš„æ•°æ®ç»“æž„å’Œç®—æ³•ï¼Œä¾›networkç­‰æ¨¡å—äº¤äº’ä¿¡æ¯ä½¿ç”¨
+ *  ä¿®æ”¹è®°å½•ï¼š
+ *  ï¼ˆ1ï¼‰å¢žåŠ è¿žæŽ¥ç›¸å…³ä¿¡æ¯å’Œç”¨æˆ·ç›¸å…³ä¿¡æ¯ï¼ŒåŽè€…å¾…æ‹†ç¦»
  */
 
 #ifndef MARIO_CONN_H_

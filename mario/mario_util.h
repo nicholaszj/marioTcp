@@ -1,16 +1,16 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_util.h
  *	
- *  Ãû³Æ£º¹¤¾ß·½·¨
- *  ¹¦ÄÜ£ºÌá¹©Ò»Ğ©³£ÓÃ·½·¨
+ *  åç§°ï¼šå·¥å…·æ–¹æ³•
+ *  åŠŸèƒ½ï¼šæä¾›ä¸€äº›å¸¸ç”¨æ–¹æ³•
  *  
- *  Created on: 2010-7-1
- *      Author: feng jianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #ifndef MARIO_UTIL_H_
@@ -23,24 +23,24 @@
 #include <signal.h>
 
 /*
- * ÄÉÃësleep
+ * çº³ç§’sleep
  */
 void nsleep(uint32 ns);
 
 /*
- * ÃëºÍÎ¢Ãîsleep
+ * ç§’å’Œå¾®å¦™sleep
  */
 void susleep(uint32 s, uint32 us);
 
 /*
- ÊäÈë:¹¤×÷Â·¾¶
- ¹¦ÄÜ:ÉèÖÃ³ÌĞòºóÌ¨¹¤×÷
+ è¾“å…¥:å·¥ä½œè·¯å¾„
+ åŠŸèƒ½:è®¾ç½®ç¨‹åºåå°å·¥ä½œ
  */
 void run_daemon();
 
 /*
- ÊäÈë:ĞÅºÅ
- ¹¦ÄÜ:ÉèÖÃĞÅºÅ¼¯ºÏ
+ è¾“å…¥:ä¿¡å·
+ åŠŸèƒ½:è®¾ç½®ä¿¡å·é›†åˆ
  */
 typedef void (*sighandler_t)(int);
 void signal_handler(int sig, sighandler_t handler);

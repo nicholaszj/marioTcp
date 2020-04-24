@@ -1,13 +1,13 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server    Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server    ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario_akg.c
  *	
- *  Created on: 2010-7-3
- *      Author: feng jianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #include "mario_akg.h"

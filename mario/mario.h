@@ -1,16 +1,16 @@
 /*
- * MarioTCP:  Multi Libvent TCP Server  Ò»¸ö¸ßĞÔÄÜµÄTCP·şÎñÆ÷
+ * MarioTCP:  Multi Libvent TCP Server  ä¸€ä¸ªé«˜æ€§èƒ½çš„TCPæœåŠ¡å™¨
  *
  * mario.h
  *	
- *  Ãû³Æ£ºmario½Ó¿ÚÄ£¿é
- *  ¹¦ÄÜ£ºmario¸ßĞ§ÍøÂç´¦Àí¹¦ÄÜµÄ½Ó¿Ú
+ *  åç§°ï¼šmarioæ¥å£æ¨¡å—
+ *  åŠŸèƒ½ï¼šmarioé«˜æ•ˆç½‘ç»œå¤„ç†åŠŸèƒ½çš„æ¥å£
  *  
- *  Created on: 2010-7-4
- *      Author: feng jianhua (johan fong)
- *        Mail: 56683216@qq.com
+ *  Created on: 
+ *      Author: 
+ *        Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #ifndef MARIO_H_
@@ -32,37 +32,37 @@ extern void close_err_conn(CONN *c);
 extern void close_conn(CONN *c, uint16 akg_id);
 
 /**
- *	×¢²áÒµÎñ´¦Àíº¯Êı
+ *	æ³¨å†Œä¸šåŠ¡å¤„ç†å‡½æ•°
  */
 void regist_akg_func(uint16 id, FUNC_PTR func);
 
 /**
- *	×¢²á½ÓÊÜ¿Í»§¶ËÁ¬½ÓÊ±ÏìÓ¦º¯Êı
+ *	æ³¨å†Œæ¥å—å®¢æˆ·ç«¯è¿æ¥æ—¶å“åº”å‡½æ•°
  */
 void regist_connected_func(FUNC_PTR func);
 
 /**
- *	×¢²á¿Í»§¶Ë¶Ï¿ª´¦Àíº¯Êı
+ *	æ³¨å†Œå®¢æˆ·ç«¯æ–­å¼€å¤„ç†å‡½æ•°
  */
 void regist_disconnected_func(FUNC_PTR func);
 
 /**
- *	×¢²áÍøÂç³¬Ê±´¦Àíº¯Êı
+ *	æ³¨å†Œç½‘ç»œè¶…æ—¶å¤„ç†å‡½æ•°
  */
 void regist_timeout_func(FUNC_PTR func);
 
 /**
- *	×¢²á¿Í»§¶ËÁ¬½Ó¹Ø±Õ´¦Àíº¯Êı
+ *	æ³¨å†Œå®¢æˆ·ç«¯è¿æ¥å…³é—­å¤„ç†å‡½æ•°
  */
 void regist_closed_func(FUNC_PTR func);
 
 /**
- *	×¢²áÍøÂç´íÎó´¦Àíº¯Êı
+ *	æ³¨å†Œç½‘ç»œé”™è¯¯å¤„ç†å‡½æ•°
  */
 void regist_error_func(FUNC_PTR func);
 
 /**
- * ×¢²áÓÃ»§×Ô¶¨ÒåÍ·²¿µÄÍ¬²½ÃÜÂë
+ * æ³¨å†Œç”¨æˆ·è‡ªå®šä¹‰å¤´éƒ¨çš„åŒæ­¥å¯†ç 
  */
 void regist_stx(uint32 stx);
 

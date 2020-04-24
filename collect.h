@@ -1,13 +1,8 @@
 /*
  * collect.h
- *	
- *  功能：定期收集、汇总数据，向数据库模块添加操作任务
- *  
- *  Date: 2013-3-1
- *  Author: feng jianhua (johan fong)
- *  Mail: 56683216@qq.com
- *
- *  修改记录：
+ *  Date: 
+ *  Author: 
+ *  Mail:
  *
 */
 
@@ -26,7 +21,7 @@ typedef struct _REPORT {
 extern REPORT *report;
 
 /**
- * ��ʼ��ȫ��collect
+ * ³õÊ¼»¯È«¾Öcollect
  */
 sint32 init_collect();
 

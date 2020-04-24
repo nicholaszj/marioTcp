@@ -1,13 +1,13 @@
 /*
  * mario.c
  *
- *  Ãû³Æ£ºMario
+ *  åç§°ï¼š
  *
- *  Date: 2013-3-1
- *  Author: feng jianhua (johan fong)
- *  Mail: 56683216@qq.com
+ *  Date: 
+ *  Author: 
+ *  Mail: 
  *
- *  ĞŞ¸Ä¼ÇÂ¼£º
+ *  ä¿®æ”¹è®°å½•ï¼š
  */
 
 #include <stdio.h>
@@ -53,7 +53,7 @@ int main(void) {
 		return -1;
 	}
 
-	//Ğ­ÒéÍ·HEADµÄ½á¹¹Çë¼ûmario_akg.h,°üº¬Ò»¸öuint32µÄtoken£¬¿ÉÓÃ¹ı´Ëº¯ÊıÀ´×¢²á£»Èç¹û²»×¢²á£¬ÔòÄ¬ÈÏÎªDEFAULT_STX
+	//åè®®å¤´HEADçš„ç»“æ„è¯·è§mario_akg.h,åŒ…å«ä¸€ä¸ªuint32çš„tokenï¼Œå¯ç”¨è¿‡æ­¤å‡½æ•°æ¥æ³¨å†Œï¼›å¦‚æœä¸æ³¨å†Œï¼Œåˆ™é»˜è®¤ä¸ºDEFAULT_STX
 	regist_stx(0x8eb69af7);
 
 	start_server((void*) server);
